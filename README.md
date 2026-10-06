@@ -38,6 +38,81 @@ Responde à pergunta: Como? Com o que? Onde? Quando?)
 ## • Requisitos funcionais
 (Escreva os requisitos funcionais da aplicação (funcionalidades esperadas, necessidades que devem ser atendidas))
 
+### 2.1.1	Grupo de RF 1 
+Coleta Automática via API/Chave:
+O sistema deve integrar-se com a fonte de alimentação de dados (plataforma Davis/nuvem) através de API/chave de autenticação para extrair medições periodicamente sem necessidade de download manual
+contínuo.
+
+### 2.1.2	Grupo de RF 2
+Importação Manual de Arquivo (.csv / .xml): 
+Como mecanismo de contingência caso a automação/API falhe ou para carregar períodos específicos, o sistema deve permitir upload manual de arquivos.
+
+### 2.1.3	Grupo de RF 3  
+Filtragem e Limpeza Automática de Colunas:
+Ao importar o .csv, o sistema deve descartar automaticamente as colunas desnecessárias e persistir apenas as variáveis úteis pré-definidas da estação.
+
+### 2.1.4	Grupo de RF 4  
+Consolidação e Agregação Temporal: 
+O sistema deve calcular e consolidar automaticamente as métricas por período:
+Agrupamento diário, semanal, mensal e anual.
+Cálculo automático de médias, valores máximos/mínimos e acumulados de precipitação, eliminando a criação manual de planilhas.
+
+### 2.1.5	Grupo de RF 5  
+Gestão de Parâmetros Climáticos:
+•	Precipitação: Acumulado diário (mm), acumulado mensal (mm) e acumulado anual (mm).
+•	Umidade Relativa do Ar (%): Média diária, valor máximo registrado (com respectivo horário) e valor mínimo registrado (com respectivo horário).
+•	Temperatura do Ar (°C): Média diária, temperatura máxima (com respectivo horário) e temperatura mínima (com respectivo horário).
+•	Sensação Térmica (°C): Máxima (índice de calor com respectivo horário) e mínima (resfriamento pelo vento com respectivo horário).
+•	Pressão Atmosférica (hPa): Média, valor máximo e valor mínimo (corrigidos para o nível do mar).
+•	Vento: Velocidade média (km/h), direção predominante (rosa dos ventos/pontos cardeais), velocidade máxima da rajada de vento (km/h com respectivo horário e direção da rajada).
+•	Extremos Anuais: Registro histórico da temperatura máxima e mínima do ano corrente (com data e hora da ocorrência).
+
+### 2.1.6	Grupo de RF 6 
+Página Inicial (Dashboard / Visão Geral):
+Exibição das condições atuais (dados em tempo real / última medição disponível).
+Apresentação resumida em cards ou tabelas limpas (inspirado no padrão de estações de referência como a da USP).
+Gráficos interativos rápidos: evolução de temperatura, pressão atmosférica (intervalos de 2 em 2 horas) e rajadas/velocidade do vento.
+
+### 2.1.7	Grupo de RF 7 
+Geração e Visualização de Gráficos Sob Demanda: 
+Permitir que o usuário clique em uma grandeza específica (ex.: temperatura, umidade, vento) e visualize um gráfico dinâmico por período selecionável (dia, semana, mês, ano).
+
+### 2.1.8	Grupo de RF 8 
+Informativos e Boletins Meteorológicos:
+Disponibilização para consulta e download dos boletins consolidados:
+Informativo Diário (layout padrão de relatório).
+Informativo Mensal (resumo com histórico pluviométrico mês a mês).
+Informativo Anual.
+Opção de exportar relatórios nos formatos PDF, .xlsx (Excel) e .csv.
+
+### 2.1.9	Grupo de RF 9
+Seção Institucional ("A Estação"): 
+Páginas dedicadas à apresentação da história da estação, procedimentos técnicos de medição e lista dos instrumentos meteorológicos em operação.
+
+### 2.1.10	Grupo de RF 10
+Seção de Contato e Localização:
+Integração com mapa interativo (Google Maps/OpenStreetMap) indicando a localização exata da estação (coordenadas: Latitude, Longitude e Altitude).
+Dados institucionais: endereço físico, telefone e e-mail de contato.
+
+### 2.1.11	Grupo de RF 11 
+Solicitação de Dados Específicos / Pesquisa:
+Formulário integrado para usuários externos (pesquisadores, seguradoras, estudantes) solicitarem séries históricas ou dados analógicos específicos.
+
+### 2.1.12	Grupo de RF 12 
+Notificação Automática por E-mail: 
+Envio automatizado dos dados preenchidos na solicitação diretamente para o e-mail da equipe responsável pela estação.
+
+### 2.1.13	Grupo de RF 13 
+Perfis e Níveis de Acesso (RBAC):
+Público/Visitante: Acesso irrestrito ao portal informativo, gráficos em tempo real, boletins públicos e formulário de solicitação.
+Pesquisador/Parceiro Cadastrado: Acesso autenticado com permissão para download de séries históricas brutas/consolidadas.
+Administrador/Operador: Gestão de usuários, carga manual de arquivos (.csv/.xml), inserção de dados analógicos antigos e edição de parâmetros institucionais.
+
+### 2.1.14	Grupo de RF 14
+Cadastro Simplificado: 
+Fluxo de cadastro sem burocracia ou exigência de campos desnecessários.
+
+
 ## • Requisitos não funcionais
 (Escreva os requisitos não funcionais da aplicação (qualidade))  
 - Requisitos de produto  
