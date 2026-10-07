@@ -25,9 +25,16 @@
 Para cada semestre, do 1º ao 6º, iremos utilizar este template para documentar o PI - incrementalmente.
 
 # 1. Introdução
-(Contextualização, Justificativa (porquê?)
+As estações meteorológicas são responsáveis pela coleta e registro de dados climáticos importantes, como temperatura, umidade relativa do ar, precipitação, pressão atmosférica e velocidade e direção dos ventos. Esses dados possuem relevância para pesquisas acadêmicas, acompanhamento das condições meteorológicas e consulta de séries históricas.
+
+Atualmente, parte do processo de obtenção, organização e consolidação dos dados da estação meteorológica é realizada de forma manual contendo vários retrabalhos, envolvendo arquivos e planilhas que precisam ser tratados para a geração de informações diárias, mensais e anuais. Esse processo pode demandar tempo, dificultar a consulta aos registros históricos e aumentar a possibilidade de inconsistências durante a manipulação dos dados.
+
+Diante desse cenário, o projeto propõe o desenvolvimento de uma plataforma web para centralização, processamento e disponibilização dos dados da estação meteorológica. O sistema realizará a coleta automática de medições por meio de integração com API, além de permitir a importação manual de arquivos como mecanismo de contingência. Os dados serão tratados, armazenados e utilizados para geração de indicadores, gráficos, boletins e séries históricas. Também haverá um dashboard com graficos sendo atualizados em tempo real contendo informações meteorológicas importantes
+
+A justificativa do projeto está, portanto, na necessidade de reduzir atividades manuais, centralizar o acervo meteorológico, facilitar o acesso às informações e proporcionar maior eficiência na organização, análise e disponibilização dos dados da estação.
 
 ## • Objetivos
+Automatizar a ingestão, o tratamento, o armazenamento e a visualização de dados climáticos, eliminando etapas manuais de filtragem de arquivos .csv, redigitação em planilhas e consolidações manuais (semanais, mensais e anuais). 
 
 ## • Metodologia
 (Que métodos, tecnologias, modelos de processo, ferramentas irá utilizar?  
