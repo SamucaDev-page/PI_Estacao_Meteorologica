@@ -37,8 +37,13 @@ A justificativa do projeto está, portanto, na necessidade de reduzir atividades
 Automatizar a ingestão, o tratamento, o armazenamento e a visualização de dados climáticos, eliminando etapas manuais de filtragem de arquivos .csv, redigitação em planilhas e consolidações manuais (semanais, mensais e anuais). 
 
 ## • Metodologia
-(Que métodos, tecnologias, modelos de processo, ferramentas irá utilizar?  
-Responde à pergunta: Como? Com o que? Onde? Quando?)  
+Nossa metodologia de pesquisa visa organizar a investigação científica para resolver problemas práticos e teóricos do Desenvolvimento de um novo Sistema para a Estação Meteorológica da Fatec de Jau. 
+
+Utilizamos a pesquisa qualitativa buscando entender significados, percepções, motivações e objetivos, trabalhando com dados não numéricos através de uma entrevista com o Cliente. 
+
+Partiremos neste Semestre da Definição, formulando perguntas de pesquisa, com o preenchimento de Requisitos Funcionais e Requisitos Não Funcionais, objetivos e revisão bibliográfica da pagina atual, Planejamento / Desenho elaborando protocolo (métodos de coleta, amostra, ferramentas) e elaboração de uma página HTML estática coletando os dados do Sistema do fabricante do Radar e (rodar experimentos, aplicar surveys, extração de código, utilização) e análise estatística/qualitativa para realizar a Validação / Redação  através da Interpretação crítica dos resultados, discussão de limitações e escrita da Documentação da Aplicação WEB. 
+
+Nossas investigações serão em Fontes Secundárias (Ambiente Acadêmico/Digital): Bases de dados científicas (IEEE Xplore, ACM Digital Library, Scopus, SciELO) para revisões e mapeamentos e Fontes Primárias (Ambiente Prático) como Repositórios de código abertos (GitHub, GitLab), Indústria, empresas de tecnologia ou startups parceiras, Ambientes controlados de laboratório universitário ou grupos de pesquisa.
 
 # 2. Requisitos
 
