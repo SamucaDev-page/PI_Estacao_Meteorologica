@@ -180,6 +180,8 @@ Carregamento do painel inicial em menos de 2 segundos sob condições normais de
 # 7. Estudo de viabilidade
 
 # 8. Regras de negócio (Modelo canvas)
+O Modelo de Negócios Canvas proposto para a modernização da Estação Meteorológica busca estruturar o valor entregue aos usuários, otimizar os processos de coleta de dados e garantir a sustentabilidade operacional do projeto. A proposta central de valor consiste em disponibilizar uma plataforma centralizada, automatizada e de fácil acesso para consulta e exportação de dados meteorológicos tratados, eliminando a dependência de processos manuais e planilhas descentralizadas.
+
 ![image alt](https://github.com/SamucaDev-page/PI_Estacao_Meteorologica/blob/main/Modelo%20de%20neg%C3%B3cios-PI%20Esta%C3%A7%C3%A3o%20Meteorol%C3%B3gica.png?raw=true)
 # 9. Design
 (Paleta de cor, Tipografia, Logo, Wireframes, Modelo de navegação)
