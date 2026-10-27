@@ -50,52 +50,88 @@ Nossas investigações serão em Fontes Secundárias (Ambiente Acadêmico/Digita
 ## • Requisitos funcionais
 
 ### - RF 1 
-**Coleta Automática via API/Chave:**
+**Exibir dados meteorológicos via iframe do Davis/WeatherLink**
 
-O sistema deve integrar-se com a fonte de alimentação de dados (plataforma Davis/nuvem) através de API/chave de autenticação para extrair medições periodicamente sem necessidade de download manual
-contínuo.
+O sistema deve incorporar um iframe da plataforma Davis/WeatherLink para exibir as informações meteorológicas disponibilizadas pela plataforma.
+
+- URL do iframe fornecido pelo WeatherLink.
+- Carregar o conteúdo incorporado da plataforma.
+- Painel meteorológico exibido no sistema.
 
 ### - RF 2
-**Importação Manual de Arquivo (.csv / .xml):**
+**Coletar dados meteorológcos via API da FATEC**
 
-Como mecanismo de contingência caso a automação/API falhe ou para carregar períodos específicos, o sistema deve permitir upload manual de arquivos.
+O sistema deve integrar à API da FATEC para coletar dados meteorológicos periodicamente, sem necessidade de download manual e contínuo.
 
-### - RF 3  
-**Filtragem e Limpeza Automática de Colunas:**
+- Dados disponibilizados pela API da FATEC.
+- Consultar a API e coletar os dados meteorológicos.
+- Dados meteorológico disponíveis para a utilização do sistema.
 
-Ao importar o .csv, o sistema deve descartar automaticamente as colunas desnecessárias e persistir apenas as variáveis úteis pré-definidas da estação.
+### - RF 3
+**Importar arquivos manualmente nos formatos CSV e XML**
+
+O sistema deve permitir a importação manual de arquivos nos formatos CSV e XML para carregar dados.
+
+- Arquivo CSV ou XML contendo dados meteorológicos.
+- Validar o formato e a estrutura do arquivo, ler os registros e importar os dados.
+- Dados meteorológicos armazenados no sistema e mensagem com o resultado da importação.
+- Por solicitação do usuário.
 
 ### - RF 4  
-**Consolidação e Agregação Temporal:** 
+**Filtrar e limpar automaticamente as colunas dos arquivos CSV**
 
-O sistema deve calcular e consolidar automaticamente as métricas por período:
-Agrupamento diário, semanal, mensal e anual.
-Cálculo automático de médias, valores máximos/mínimos e acumulados de precipitação, eliminando a criação manual de planilhas.
+O sistema deve descartar automaticamente, durante a importação de arquivos CSV, as colunas desnecessárias e armazenar apenas as variáveis meteorológicas previamente definidas para a estação.
+
+- Identificar as colunas do arquivo, selecionar as variáveis predefinidas e desconsiderar as demais.
+- Dados das variáveis selecionadas armazenadas no sistema
+- Informar quando o arquivo não tem uma coluna obrigatória. 
 
 ### - RF 5  
-**Gestão de Parâmetros Climáticos:**
+**Consolidar e agregar dados meteorológicos por período** 
 
-*	Precipitação: Acumulado diário (mm), acumulado mensal (mm) e acumulado anual (mm).
-*	Umidade Relativa do Ar (%): Média diária, valor máximo registrado (com respectivo horário) e valor mínimo registrado (com respectivo horário).
-*	Temperatura do Ar (°C): Média diária, temperatura máxima (com respectivo horário) e temperatura mínima (com respectivo horário).
-*	Sensação Térmica (°C): Máxima (índice de calor com respectivo horário) e mínima (resfriamento pelo vento com respectivo horário).
-*	Pressão Atmosférica (hPa): Média, valor máximo e valor mínimo (corrigidos para o nível do mar).
-*	Vento: Velocidade média (km/h), direção predominante (rosa dos ventos/pontos cardeais), velocidade máxima da rajada de vento (km/h com respectivo horário e direção da rajada).
-*	Extremos Anuais: Registro histórico da temperatura máxima e mínima do ano corrente (com data e hora da ocorrência).
+O sistema deve agrupar automaticamente os dados meteorológicos por dia, semana, mês e ano, calculando média, valores máximos e mínimos das variáveis aplicáveis e acumulados de precipitação, sem necessidade de criar planilhas manualmente.
 
-### - RF 6 
-**Página Inicial (Dashboard / Visão Geral):**
+- Dados meteorológicos armazenados no sistema, com data e horário das medições.
+- Agrupar as medições por período e calcular as necessidades correspondentes a cada variável.
+- Métricas diárias, semanais e anuias consolidadas.
+- Automaticamente após a inclusão de novos dados.
+- 
 
-Exibição das condições atuais (dados em tempo real / última medição disponível).
-Apresentação resumida em cards ou tabelas limpas (inspirado no padrão de estações de referência como a da USP).
-Gráficos interativos rápidos: evolução de temperatura, pressão atmosférica (intervalos de 2 em 2 horas) e rajadas/velocidade do vento.
+### - RF 6  
+**Exibir variáveis e indicadores meteorológicos**
+
+O sistema deve exibir as variáveis e os indicadores meteorológicos da estação, incluindo:
+
+*	**Precipitação:** Acumulado diário (mm), acumulado mensal (mm) e acumulado anual (mm).
+*	**Umidade Relativa do Ar (%):** Média diária, valor máximo registrado (com respectivo horário) e valor mínimo registrado (com respectivo horário).
+*	**Temperatura do Ar (°C):** Média diária, temperatura máxima (com respectivo horário) e temperatura mínima (com respectivo horário).
+*	**Sensação Térmica (°C):** Máxima (índice de calor com respectivo horário) e mínima (resfriamento pelo vento com respectivo horário).
+*	**Pressão Atmosférica (hPa):** Média, valor máximo e valor mínimo (corrigidos para o nível do mar).
+*	**Vento:** Velocidade média (km/h), direção predominante (rosa dos ventos/pontos cardeais), velocidade máxima da rajada de vento (km/h com respectivo horário e direção da rajada).
+*	**Extremos Anuais:** Registro histórico da temperatura máxima e mínima do ano corrente (com data e hora da ocorrência).
+
+**Atributos:**
+
+- Dados meteorológicos e métricas consolidadas disponíveis no sistema.
+- Consultar e organizar as informações correspondentes a cada variável e período.
+- Variáveis e indicadores meteorológicos apresentados na interface.
+- Informar quando não houver dados disponíveis para determinada variável ou período 
 
 ### - RF 7 
+**Exibir painel com visão geral das condições meteorológicas (dashboard)**
+
+O sistema deve apresentar na página inicial as condições meteorológicas da última medição disponível, organizadas em cards ou tabelas, e gráficos interativos da evolução da temperatura, da pressão atmosférica em intervalos de 2 horas e velocidade do vento e suas rajadas
+
+- Dados meteorológicos disponíveis no sistema, incluindo data e horário das medições.
+- Consultar as últimas medições e organizar os dados para apresentação dos indicadores e gráficos.
+- Painel com resumo das condições meteorológicas, data e horário da última medição e gráficos interativos.
+
+### - RF 8 
 **Geração e Visualização de Gráficos Sob Demanda:** 
 
 Permitir que o usuário clique em uma grandeza específica (ex.: temperatura, umidade, vento) e visualize um gráfico dinâmico por período selecionável (dia, semana, mês, ano).
 
-### - RF 8 
+### - RF 9 
 **Informativos e Boletins Meteorológicos:**
 
 Disponibilização para consulta e download dos boletins consolidados:
@@ -104,35 +140,35 @@ Informativo Mensal (resumo com histórico pluviométrico mês a mês).
 Informativo Anual.
 Opção de exportar relatórios nos formatos PDF, .xlsx (Excel) e .csv.
 
-### - RF 9
+### - RF 10
 **Seção Institucional ("A Estação"):** 
 
 Páginas dedicadas à apresentação da história da estação, procedimentos técnicos de medição e lista dos instrumentos meteorológicos em operação.
 
-### - RF 10
+### - RF 11
 **Seção de Contato e Localização:**
 
 Integração com mapa interativo (Google Maps/OpenStreetMap) indicando a localização exata da estação (coordenadas: Latitude, Longitude e Altitude).
 Dados institucionais: endereço físico, telefone e e-mail de contato.
 
-### - RF 11 
+### - RF 12 
 **Solicitação de Dados Específicos / Pesquisa:**
 
 Formulário integrado para usuários externos (pesquisadores, seguradoras, estudantes) solicitarem séries históricas ou dados analógicos específicos.
 
-### - RF 12 
+### - RF 13 
 **Notificação Automática por E-mail:** 
 
 Envio automatizado dos dados preenchidos na solicitação diretamente para o e-mail da equipe responsável pela estação.
 
-### - RF 13 
+### - RF 14 
 **Perfis e Níveis de Acesso (RBAC):**
 
 Público/Visitante: Acesso irrestrito ao portal informativo, gráficos em tempo real, boletins públicos e formulário de solicitação.
 Pesquisador/Parceiro Cadastrado: Acesso autenticado com permissão para download de séries históricas brutas/consolidadas.
 Administrador/Operador: Gestão de usuários, carga manual de arquivos (.csv/.xml), inserção de dados analógicos antigos e edição de parâmetros institucionais.
 
-### - RF 14
+### - RF 15
 **Cadastro Simplificado:** 
 
 Fluxo de cadastro sem burocracia ou exigência de campos desnecessários.
