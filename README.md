@@ -95,7 +95,6 @@ O sistema deve agrupar automaticamente os dados meteorológicos por dia, semana,
 - Agrupar as medições por período e calcular as necessidades correspondentes a cada variável.
 - Métricas diárias, semanais e anuias consolidadas.
 - Automaticamente após a inclusão de novos dados.
-- 
 
 ### - RF 6  
 **Exibir variáveis e indicadores meteorológicos**
@@ -127,52 +126,89 @@ O sistema deve apresentar na página inicial as condições meteorológicas da �
 - Painel com resumo das condições meteorológicas, data e horário da última medição e gráficos interativos.
 
 ### - RF 8 
-**Geração e Visualização de Gráficos Sob Demanda:** 
+**Gerar e visualizar gráficos meteorológicos sob demanda** 
 
-Permitir que o usuário clique em uma grandeza específica (ex.: temperatura, umidade, vento) e visualize um gráfico dinâmico por período selecionável (dia, semana, mês, ano).
+O sistema deve permitir ao usuário selecionar uma grandeza meteorológica, como temperatura, umidade ou vento, e visualizar um gráfico dinâmico correspondente ao período escolhido: dia, semana, mês ou ano.
+
+- Grandeza meteorológica e período selecionados pelo usuário.
+- Consultar dados correspondentes à seleção e gerar o gráfico.
+- Gráfico de grandeza selecionada, com identificação do período e da unidade selecionada.
 
 ### - RF 9 
-**Informativos e Boletins Meteorológicos:**
+**Disponibilizar e exportar boletins meteorológicos**
 
-Disponibilização para consulta e download dos boletins consolidados:
-Informativo Diário (layout padrão de relatório).
-Informativo Mensal (resumo com histórico pluviométrico mês a mês).
-Informativo Anual.
-Opção de exportar relatórios nos formatos PDF, .xlsx (Excel) e .csv.
+O sistema deve permitir a consulta e o download de boletins meteorológicos consolidados, contemplando:
+
+- **Informativo Diário:** Apresentar os dados do dia em um modelo padronizado de relatório.
+- **Informativo Mensal:** Apresentar o resumo do mês e o histórico pluviométrico organizado mês a mês.
+- **Informativo Anual:** Apresentar o resumo consolidado dos dados do ano.
+- **Exportação:** Disponibilizar os boletins nos formato PDF, XLSX (Excel) e CSV.
+
+**Atribútos**
+
+- Tipo de boletim, período de referência e formato de exportação selecionados pelo usuário.
+- Consultar os dados consolidados do período e organizar o boletim para visualização ou exportação.
+- Boletim disponível para consulta na interface ou download no formato escolhido.
 
 ### - RF 10
-**Seção Institucional ("A Estação"):** 
+**Apresentar informações institucionais da estação meteorológica** 
 
-Páginas dedicadas à apresentação da história da estação, procedimentos técnicos de medição e lista dos instrumentos meteorológicos em operação.
+O sistema deve disponibilizar uma sessão denominada "A Estação" para apresentar a história da estação meteorológica, os procedimentos técnicos de medição e a relação dos instrumentos meteorológicos em operação.
+
+- Conteúdos institucionais, descrições dos procedimentos de medição e informações sobre instrumentos em operação.
+- Organizar os conteúdos para consulta na sessão "A Estação"
+- Páginas com a história da estação, os procedimentos técnicos e a lista de instrumentos meteorológicos. 
 
 ### - RF 11
-**Seção de Contato e Localização:**
+**Exibir informações de contato e localização da estação**
 
-Integração com mapa interativo (Google Maps/OpenStreetMap) indicando a localização exata da estação (coordenadas: Latitude, Longitude e Altitude).
-Dados institucionais: endereço físico, telefone e e-mail de contato.
+O sistema deve disponibilizar uma sessão de contato e localização com mapa interativo, utilizando Google Maps ou OpenStreetMap, para indicar a posição da estação meteorológica. Apresentar latitude, longitude, altitude, endereço físico, telefone e e-mail institucional
+
+- Carregar o mapa interativo, posicionar o marcador conforme a latitude e a longitude e organizar as informações de localização e contato.
+- Mapa com a localização da estação, acompanhando as coordenadas, da altitude e dos dados de contato. 
 
 ### - RF 12 
-**Solicitação de Dados Específicos / Pesquisa:**
+**Solicitar séries históricas e dados meteorológicos específicos**
 
-Formulário integrado para usuários externos (pesquisadores, seguradoras, estudantes) solicitarem séries históricas ou dados analógicos específicos.
+O sistema deve permitir que os usuários externos, como pesquisadores, seguradoras e estudantes, solicitem séries históricas ou dados de registros analógicos por meio de um formulário integrado ao sistema.
+
+- Nome, e-mail, instituição ou vínculo, finalidade da solicitação, período de interesse e descrição dos dados desejados.
+- Validar os campos obrigatórios e registrar a solicitação para análise dos responsáveis pela estação.
+- Solicitação registrada e mensagem de confirmação ao usuário
+- informar campos obrigatórios ausentes, dados inválidos ou falha no registro da solicitação, permitindo corrigir e tentar novamente.   
 
 ### - RF 13 
-**Notificação Automática por E-mail:** 
+**Notificar a equipe responsável por e-mail sobre novas solicitações** 
 
-Envio automatizado dos dados preenchidos na solicitação diretamente para o e-mail da equipe responsável pela estação.
+O sistema deve enviar automaticamente para o e-mail da equipe responsável pela estação os dados preenchidos no formulário de solicitação de séries históricas ou dados meteorológicos específicos.
+
+- Dados da solicitação registrada e endereço de e-mail da equipe responsável.
+- Organizar os dados da solicitação em uma mensagem e enviá-la automaticamente à equipe.
+- E-mail de notificação contendo informações da solicitação.
 
 ### - RF 14 
-**Perfis e Níveis de Acesso (RBAC):**
+**Controlar o acesso às funcionalidades por perfil de usuário**
 
-Público/Visitante: Acesso irrestrito ao portal informativo, gráficos em tempo real, boletins públicos e formulário de solicitação.
-Pesquisador/Parceiro Cadastrado: Acesso autenticado com permissão para download de séries históricas brutas/consolidadas.
-Administrador/Operador: Gestão de usuários, carga manual de arquivos (.csv/.xml), inserção de dados analógicos antigos e edição de parâmetros institucionais.
+O sistema deve aplicar o controle de acesso baseado em papéis (RBAC), disponibilizando as funcionalidades conforme as permissões de cada perfil:
+
+- **Público / Visitante:** Permitir acesso, sem autenticação, ao portal informativo, aos gráficos com as últimas medições disponíveis, aos boletins públicos e ao formulário de solicitação.
+- **Pesquisador / Parceiro Cadastrado:** Permitir acesso autenticado para download de séries históricas brutas e consolidadas.
+- **Administrador / Operador:** Permitir acesso autenticado para gerenciar usuários, importar arquivos CSV e XML, inserir dados de registro analógicos antigos e editar informações institucionais.
+
+**Atributos**
+
+- Identificação do usuário, perfil atribuído e funcionalidade solicitada.
+- Verificar a autenticação, quando necessária, e validar as permissões do perfil antes de autorizar a operação.
+- Acesso permitido ou negado conforme as permissões do usuário.
 
 ### - RF 15
-**Cadastro Simplificado:** 
+**Permitir o cadastro simplificado de usuários** 
 
-Fluxo de cadastro sem burocracia ou exigência de campos desnecessários.
+O sistema deve disponibilizar um formulário de cadastro para pesquisadores e parceiros, solicitando apenas os dados necessários à identificação e à criação da conta, sem exigir informações sem relação com o acesso ao sistema
 
+- Nome, E-mail, Senha
+- Validar os campos obrigatórios, verificar se o e-mail já está cadastrado e registrar a conta.
+- Conta criada e a mensagem de confirmação de cadastro.
 
 ## • Requisitos não funcionais
 
