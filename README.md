@@ -215,17 +215,53 @@ O sistema deve disponibilizar um formulário de cadastro para pesquisadores e pa
 ### - RNF 1 
 **Usabilidade e Interface (UI/UX):** 
 
-O layout deve ser moderno, limpo, responsivo e estruturado em tabelas e cards intuitivos, reduzindo redundâncias visuais.
+O layout deve ser responsivo e funcionar sem rolagem horizontal nas larguras de 360px, 768px,1366px e 1920px.
+
+- **Atributo: Responsividade (Adaptabilidade)**
+
+  A interface deve adaptar-se automaticamente a resoluções de tela de smartphones (mínimo de 360px de largura), tablets e desktops (até 1920px), sem perda de funcionalidade ou sobreposição de componentes.
+
+- **Atributo: Estética e Design de Interface (Minimalismo)**
+
+  O layout deve seguir um guia de estilos padronizado (ex: Design System do projeto), limitando a densidade de informações a um máximo de 60% de ocupação visual da tela para evitar redundâncias e sobrecarga cognitiva.
+
+- **Atributo: Operabilidade (Intuitividade)**
+
+  Usuários sem treinamento prévio devem ser capazes de localizar e exportar dados das tabelas e cards informativos em no máximo 3 cliques a partir da tela inicial.
 
 ### - RNF 2
 **Disponibilidade e Confiabilidade:** 
 
 O sistema deve operar de forma ininterrupta (meta de 99.5% de disponibilidade) para garantir que consultas públicas e acadêmicas estejam sempre acessíveis.
 
+- **Atributo: Disponibilidade (Uptime)**
+
+  O sistema deve manter uma taxa de disponibilidade (Uptime) mínima de 99,5%, calculada mensalmente (permitindo um tempo máximo de indisponibilidade de aproximadamente 3 horas e 39 minutos por mês).
+
+- **Atributo: Confiabilidade (Taxa de Sucesso)**
+
+  A taxa de erro em consultas públicas e acadêmicas não deve ultrapassar 0,1% do total de requisições sob condições normais de operação.
+
+- **Atributo: Robustez (Recuperação)**
+
+  O sistema deve possuir rotinas automáticas de failover capazes de reestabelecer o serviço de consulta em até 5 minutos caso ocorra uma queda no servidor principal.
+
 ### - RNF 3
 **Resiliência e Desacoplamento:** 
 
 O sistema não deve depender criticamente de uma única interface externa; falhas temporárias na API da estação devem ser tratadas com logs de erro claros e chaveamento para o upload manual de contingência.
+
+- **Atributo: Disponibilidade (Uptime)**
+
+  O sistema deve manter uma taxa de disponibilidade (Uptime) mínima de 99,5%, calculada mensalmente (permitindo um tempo máximo de indisponibilidade de aproximadamente 3 horas e 39 minutos por mês).
+
+- **Atributo: Confiabilidade (Taxa de Sucesso)**
+
+  A taxa de erro em consultas públicas e acadêmicas não deve ultrapassar 0,1% do total de requisições sob condições normais de operação.
+
+- **Atributo: Robustez (Recuperação)**
+
+  O sistema deve possuir rotinas automáticas de failover capazes de reestabelecer o serviço de consulta em até 5 minutos caso ocorra uma queda no servidor principal.
 
 ### - RNF 4
 **Segurança da Informação:**
@@ -234,10 +270,31 @@ Uso obrigatório de protocolo seguro HTTPS com certificado SSL.
 Armazenamento de credenciais de acesso e chaves de API criptografadas.
 Proteção contra ataques comuns na web (injeção de SQL, CSRF e XSS).
 
+- **Atributo: Confidencialidade e Criptografia em Trânsito**
+
+  Toda a comunicação entre o cliente e o servidor deve ser criptografada utilizando o protocolo HTTPS com TLS 1.3 (ou superior). Requisições HTTP convencionais devem ser redirecionadas automaticamente para HTTPS.
+
+- **Atributo: Proteção de Dados (Criptografia em Repouso)**
+
+  Chaves de API e credenciais de acesso devem ser armazenadas no banco de dados utilizando criptografia simétrica forte (AES-256) ou funções de hashing seguras (como BCrypt para senhas).
+
+- **Atributo: Vulnerabilidade (Mitigação de Riscos)**
+
+  O código e o ambiente devem ser validados contra as vulnerabilidades do OWASP Top 10, garantindo mecanismos nativos de sanitização de inputs (contra SQL Injection) e cabeçalhos de segurança (CSP e tokens CSRF ativos).
+
 ### - RNF 5
 **Desempenho:** 
 
 Carregamento do painel inicial em menos de 2 segundos sob condições normais de rede, com cache de consultas históricas consolidadas.
+
+- **Atributo: Tempo de Resposta (Latência)**
+
+  O tempo de carregamento completo da página (Time to Interactive - TTI) do painel principal deve ser de, no máximo, 2 segundos para conexões de banda larga padrão (ex: 10 Mbps).
+
+- **Atributo: Eficiência (Mecanismo de Cache)**
+
+  Consultas de dados históricos consolidados devem ser servidas a partir de uma camada de cache (ex: Redis ou cache HTTP em memória) com tempo de expiração (TTL) parametrizado, reduzindo o tempo de resposta dessas requisições para menos de 300ms.
+  
 
 
 # 3. Modelo de casos de uso
