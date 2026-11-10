@@ -318,8 +318,8 @@ O Modelo de Negócios Canvas proposto para a modernização da Estação Meteoro
 
 ![image alt](https://github.com/SamucaDev-page/PI_Estacao_Meteorologica/blob/main/Modelo%20de%20neg%C3%B3cios-PI%20Esta%C3%A7%C3%A3o%20Meteorol%C3%B3gica.png?raw=true)
 # 9. Design
-(Paleta de cor, Tipografia, Logo, Wireframes, Modelo de navegação)
-
+Design feito no Figma para o PI da Estação hidrometeorológica
+![image alt](https://github.com/SamucaDev-page/PI_Estacao_Meteorologica/blob/main/Design%20Figma.png?raw=true)
 # 10. Protótipo
 (Gere um protótipo funcional na ferramenta que se sentir mais confortável (Figma, por exemplo) e apresente aqui, indicando o link).
 
