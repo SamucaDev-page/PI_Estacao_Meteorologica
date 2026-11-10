@@ -215,7 +215,7 @@ O sistema deve disponibilizar um formulário de cadastro para pesquisadores e pa
 ### - RNF 1 
 **Usabilidade e Interface (UI/UX):** 
 
-O layout deve ser responsivo e funcionar sem rolagem horizontal nas larguras de 360px, 768px,1366px e 1920px.
+A interface gráfica deve oferecer uma navegação fluida e adaptável, garantindo que o layout seja exibido com clareza e sem necessidade de rolagem horizontal nas resoluções de 360px, 768px, 1366px e 1920px.
 
 - **Atributo: Responsividade (Adaptabilidade)**
 
